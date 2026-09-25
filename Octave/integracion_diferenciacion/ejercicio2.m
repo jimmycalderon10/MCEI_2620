@@ -15,7 +15,9 @@ close all;
 % 1. CARGA DE LOS DATOS EXPERIMENTALES
 % ------------------------------------------------------------
 
-datos = dlmread('datos/datos_sensor.csv', ',', 1, 0);
+ruta_script = fileparts(mfilename('fullpath'));
+ruta_csv = fullfile(ruta_script, '..', '..', 'datos', 'datos_sensor.csv');
+datos = dlmread(ruta_csv, ',', 1, 0);
 
 x = datos(:,1);
 y = datos(:,2);
